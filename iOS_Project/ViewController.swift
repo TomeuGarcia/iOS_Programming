@@ -184,6 +184,128 @@ class ViewController: UIViewController {
                 
         
     }
+    
+    
 
 }
 
+
+
+
+
+extension ViewController.TestObject {
+    
+    // Extensions must not contain stored properties
+    //var d : Int
+    
+    func subtractOneToAll() {
+        a -= 1
+        c = (c ?? 0) - 1
+    }
+}
+
+extension ViewController {
+    
+    func testExtension() {
+        var extendedObject = TestObject()
+        extendedObject.subtractOneToAll()
+    }
+}
+
+
+
+
+protocol RedeableAsText {
+    
+    // Property in protocol must have explicit { get } or { get set } specifier
+    //var text : String = ""
+    
+    var Text : String { get }
+    
+    func toText() -> String
+}
+
+extension ViewController.TestObject : RedeableAsText {
+    var Text: String {
+        return toText()
+    }
+    
+    func toText() -> String {
+        var s = ""
+        s += "The variable A is \(a) \n"
+        s += "The variable B is " + b.formatted() + "\n"
+        s += "The variable C is \(c)"
+        
+        return s
+    }
+    
+    
+}
+
+extension ViewController {
+    
+    func testProtocol(){
+        var extendedObject = TestObject()
+        var aString = extendedObject.Text
+        var bString = extendedObject.toText()
+    }
+}
+
+
+
+
+// MARK: Iterations
+
+extension ViewController {
+    
+    func testIterations() {
+        
+        var list : [Int] = []
+        list.append(0)
+        list.append(1)
+        list.append(2)
+        list.append(3)
+        
+        list.forEach { item in
+            print(item)
+            debugPrint(item)
+        }
+        
+        print(list)
+        debugPrint(list)
+        
+        for item in list {
+            print(item)
+        }
+        
+        for i in 0...list.count {
+            print(list[i])
+        }
+        
+        var otherList = [Int](0...100)
+        
+        for number in otherList where number % 2 == 0 {
+            print(number)
+        }
+        
+        
+        var objectsClass : [TestObject] = []
+        objectsClass.append(TestObject(a: 1, b: 1, c: 1))
+        objectsClass.append(TestObject(a: 2, b: 2, c: nil))
+        objectsClass.append(TestObject(a: 3, b: 3, c: 3))
+        objectsClass.append(TestObject(a: 4, b: 4, c: nil))
+        objectsClass.append(TestObject(a: 5, b: 5, c: 5))
+        
+        for item in objectsClass where item.c != nil {
+            print(item.c)
+        }
+        
+        
+        var i = 0
+        while (i < list.count) {
+            print(i)
+            i += 1
+        }
+    }
+    
+}
