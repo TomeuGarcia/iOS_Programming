@@ -259,7 +259,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oz-U3-VmN" userLabel="Box_Blue">
-                                <rect key="frame" x="121.66666666666669" y="538.66666666666663" width="150" height="150"/>
+                                <rect key="frame" x="-103.66666666666669" y="538.66666666666663" width="600.33333333333337" height="599.99999999999989"/>
                                 <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
                             </view>
                         </subviews>
@@ -267,13 +267,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2d2-vA-qKF" firstAttribute="height" secondItem="Ct7-M5-GwS" secondAttribute="height" multiplier="1.5" id="2xn-US-K0S"/>
+                            <constraint firstItem="3oz-U3-VmN" firstAttribute="width" secondItem="uTy-zq-d1s" secondAttribute="width" multiplier="1.52757" id="DIR-gi-DPO"/>
                             <constraint firstItem="3oz-U3-VmN" firstAttribute="centerX" secondItem="Ct7-M5-GwS" secondAttribute="centerX" id="Dfi-uf-PWg"/>
                             <constraint firstItem="Ct7-M5-GwS" firstAttribute="top" secondItem="2d2-vA-qKF" secondAttribute="bottom" constant="50" id="GqV-4M-OZZ"/>
-                            <constraint firstItem="3oz-U3-VmN" firstAttribute="width" secondItem="Ct7-M5-GwS" secondAttribute="width" multiplier="1.5" id="KGX-Uf-eQI"/>
+                            <constraint firstItem="3oz-U3-VmN" firstAttribute="width" secondItem="Ct7-M5-GwS" secondAttribute="width" multiplier="6" priority="750" id="KGX-Uf-eQI"/>
                             <constraint firstItem="2d2-vA-qKF" firstAttribute="centerX" secondItem="Ct7-M5-GwS" secondAttribute="centerX" id="TjN-No-EuB"/>
                             <constraint firstItem="Ct7-M5-GwS" firstAttribute="centerY" secondItem="yzC-Yz-HHu" secondAttribute="centerY" id="WCQ-c6-CrM"/>
-                            <constraint firstItem="3oz-U3-VmN" firstAttribute="height" secondItem="Ct7-M5-GwS" secondAttribute="height" multiplier="1.5" id="b3v-AK-N7J"/>
+                            <constraint firstItem="3oz-U3-VmN" firstAttribute="height" secondItem="Ct7-M5-GwS" secondAttribute="height" multiplier="6" priority="750" id="b3v-AK-N7J"/>
                             <constraint firstItem="3oz-U3-VmN" firstAttribute="top" secondItem="Ct7-M5-GwS" secondAttribute="bottom" constant="50" id="fzO-eC-jeI"/>
+                            <constraint firstItem="3oz-U3-VmN" firstAttribute="height" secondItem="uTy-zq-d1s" secondAttribute="height" multiplier="0.704225" id="m9M-wz-svT"/>
                             <constraint firstItem="2d2-vA-qKF" firstAttribute="width" secondItem="Ct7-M5-GwS" secondAttribute="width" multiplier="1.5" id="stK-gR-DaD"/>
                             <constraint firstItem="Ct7-M5-GwS" firstAttribute="centerX" secondItem="yzC-Yz-HHu" secondAttribute="centerX" id="vy1-4P-aAG"/>
                         </constraints>
@@ -289,16 +291,16 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
