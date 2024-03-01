@@ -341,7 +341,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drl-qm-iTG">
-                                                <rect key="frame" x="0.0" y="21" width="343" height="2"/>
+                                                <rect key="frame" x="0.0" y="22" width="343" height="2"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="klq-un-8VF"/>
@@ -506,11 +506,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T6e-Q6-7ce">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T6e-Q6-7ce">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell_ID" id="cIb-2C-XrV" customClass="NoteCell" customModule="iOS_Project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="cIb-2C-XrV" customClass="NoteCell" customModule="iOS_Project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="149.33332824707031"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cIb-2C-XrV" id="Bu8-82-w1E">
@@ -523,11 +523,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-1R-j1o">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="twl-kg-bq4">
                                                     <rect key="frame" x="0.0" y="49.333333333333343" width="393" height="100"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="U4l-Wf-71w"/>
+                                                        <constraint firstAttribute="height" constant="100" id="g0B-OH-bgH"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -537,21 +537,39 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HHO-6C-hUA" firstAttribute="top" secondItem="Bu8-82-w1E" secondAttribute="topMargin" id="ZAI-il-teI"/>
-                                                <constraint firstAttribute="trailing" secondItem="vZd-1R-j1o" secondAttribute="trailing" id="ais-0m-Fgu"/>
-                                                <constraint firstItem="HHO-6C-hUA" firstAttribute="bottom" secondItem="vZd-1R-j1o" secondAttribute="top" id="bv2-qH-TTX"/>
-                                                <constraint firstItem="vZd-1R-j1o" firstAttribute="leading" secondItem="Bu8-82-w1E" secondAttribute="leading" id="gh1-Rg-ctd"/>
+                                                <constraint firstItem="twl-kg-bq4" firstAttribute="top" secondItem="HHO-6C-hUA" secondAttribute="bottom" id="dkA-SU-7Nr"/>
+                                                <constraint firstItem="twl-kg-bq4" firstAttribute="leading" secondItem="Bu8-82-w1E" secondAttribute="leading" id="pGK-pQ-JGQ"/>
                                                 <constraint firstItem="HHO-6C-hUA" firstAttribute="leading" secondItem="Bu8-82-w1E" secondAttribute="leadingMargin" id="pR6-u1-Ap8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="HHO-6C-hUA" secondAttribute="trailing" id="pyM-x9-FWk"/>
-                                                <constraint firstAttribute="bottom" secondItem="vZd-1R-j1o" secondAttribute="bottom" id="zxb-YJ-0tu"/>
+                                                <constraint firstAttribute="trailing" secondItem="twl-kg-bq4" secondAttribute="trailing" id="rKx-vF-9tu"/>
+                                                <constraint firstAttribute="bottom" secondItem="twl-kg-bq4" secondAttribute="bottom" id="yON-t8-s0R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="Content" destination="vZd-1R-j1o" id="JcJ-5i-tpl"/>
+                                            <outlet property="Content" destination="twl-kg-bq4" id="y8s-H4-zDE"/>
                                             <outlet property="TitleText" destination="HHO-6C-hUA" id="6Rf-16-6HA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-u9-79o" userLabel="AddNoteButton">
+                                <rect key="frame" x="293" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bf1-zi-Jas"/>
+                                    <constraint firstAttribute="width" constant="50" id="swd-HF-1lm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background" strokeWidth="3">
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="strokeColor" systemColor="tableCellBlueTextColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="AddNoteButtonPressed:" destination="3ob-AV-idi" eventType="touchUpInside" id="WOY-eZ-4PI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fn9-3t-MFX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -559,17 +577,19 @@
                             <constraint firstItem="Fn9-3t-MFX" firstAttribute="bottom" secondItem="T6e-Q6-7ce" secondAttribute="bottom" id="6vr-Bk-LnA"/>
                             <constraint firstItem="T6e-Q6-7ce" firstAttribute="top" secondItem="Fn9-3t-MFX" secondAttribute="top" id="JaL-lN-BP1"/>
                             <constraint firstItem="Fn9-3t-MFX" firstAttribute="trailing" secondItem="T6e-Q6-7ce" secondAttribute="trailing" id="LiS-Zq-r9W"/>
+                            <constraint firstItem="Fn9-3t-MFX" firstAttribute="trailing" secondItem="Z1b-u9-79o" secondAttribute="trailing" constant="50" id="NTm-b8-qAF"/>
+                            <constraint firstItem="Fn9-3t-MFX" firstAttribute="bottom" secondItem="Z1b-u9-79o" secondAttribute="bottom" constant="50" id="msp-HC-ZOH"/>
                             <constraint firstItem="T6e-Q6-7ce" firstAttribute="leading" secondItem="Fn9-3t-MFX" secondAttribute="leading" id="o1f-7F-bYE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Content" destination="vZd-1R-j1o" id="I69-cw-VTt"/>
+                        <outlet property="AddNoteButton" destination="Z1b-u9-79o" id="4Cg-2V-O7F"/>
                         <outlet property="table" destination="T6e-Q6-7ce" id="O9M-N4-USJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSf-5w-3Xn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5489" y="442"/>
+            <point key="canvasLocation" x="-5489" y="406"/>
         </scene>
         <!--Table Test View Controller-->
         <scene sceneID="53v-m1-PRS">
@@ -603,7 +623,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk0-rW-2Pv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="48.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="385" height="48.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -684,7 +704,7 @@
                                 <rect key="frame" x="0.0" y="326.66666666666674" width="393" height="491.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UIc-zA-uzi">
-                                        <rect key="frame" x="15" y="15" width="363" height="461.33333333333337"/>
+                                        <rect key="frame" x="15" y="15" width="363" height="461.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hWe-LK-MlA">
                                                 <rect key="frame" x="0.0" y="0.0" width="363" height="80.333333333333329"/>
@@ -1278,7 +1298,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1287,31 +1307,31 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

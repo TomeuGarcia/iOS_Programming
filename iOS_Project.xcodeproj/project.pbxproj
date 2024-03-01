@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F7F491D2B922D1900F660E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7F491C2B922D1900F660E9 /* Note.swift */; };
+		6F7F491F2B92336B00F660E9 /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7F491E2B92336B00F660E9 /* UserDefaults+Codable.swift */; };
 		6F9B44E42B7FDD3300F4BBE9 /* SteamLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */; };
 		6FAFEDE62B76A1F0009EF424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE52B76A1F0009EF424 /* AppDelegate.swift */; };
 		6FAFEDE82B76A1F0009EF424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE72B76A1F0009EF424 /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F7F491C2B922D1900F660E9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		6F7F491E2B92336B00F660E9 /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
 		6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamLoginViewController.swift; sourceTree = "<group>"; };
 		6FAFEDE22B76A1F0009EF424 /* iOS_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFEDE52B76A1F0009EF424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */,
 				6FB6F1572B8913C500587338 /* TextCell.swift */,
 				6FB6F1592B8924E700587338 /* NotesListViewController.swift */,
+				6F7F491C2B922D1900F660E9 /* Note.swift */,
+				6F7F491E2B92336B00F660E9 /* UserDefaults+Codable.swift */,
 			);
 			path = iOS_Project;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				6FAFEDEA2B76A1F0009EF424 /* ViewController.swift in Sources */,
 				6FB6F1582B8913C500587338 /* TextCell.swift in Sources */,
 				6FB6F15A2B8924E700587338 /* NotesListViewController.swift in Sources */,
+				6F7F491F2B92336B00F660E9 /* UserDefaults+Codable.swift in Sources */,
+				6F7F491D2B922D1900F660E9 /* Note.swift in Sources */,
 				6FB6F1562B89108100587338 /* TableTesteViewController.swift in Sources */,
 				6FB6F15C2B89280E00587338 /* NoteCell.swift in Sources */,
 				6FAFEDE62B76A1F0009EF424 /* AppDelegate.swift in Sources */,

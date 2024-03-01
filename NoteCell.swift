@@ -11,6 +11,13 @@ import UIKit
 class NoteCell : UITableViewCell {
     
     @IBOutlet weak var TitleText: UILabel!
-    
     @IBOutlet weak var Content: UITextView!
+    
+    
+    func updateWithNote(_ note: Note) {
+        TitleText.text = note.title
+        Content.text = note.content
+    }
+
+    
 }
