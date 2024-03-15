@@ -51,7 +51,14 @@ class HeroesListVC : VC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callPokemon()
+        //callPokemon()
+        
+        //call(Pokemon.self, urlString : "https://pokeapi.co/api/v2/pokemon/charizard")
+        //call(Digimon.self, urlString : "https://digi-api.com/api/v1/digimon/289")
+        
+        RepoManager.Marvel.getHeroes(offset: 0, limit: 20) { heroes in
+            let i = 0
+        }
     }
     
     
@@ -114,7 +121,7 @@ class HeroesListVC : VC {
     }
     
     
-    func call<T : Codable>(t : T, urlString: String) {
+    func call<T : Codable>(_ t: T.Type, urlString: String) {
         
         if let url = URL(string: urlString)
         {
@@ -124,7 +131,7 @@ class HeroesListVC : VC {
                 
                 if let data = data, let jsonString = String(data: data, encoding: .utf8) {
                     
-                    if let digimon = try? JSONDecoder().decode(T.self, from: data) {
+                    if let digimon = try? JSONDecoder().decode(t, from: data) {
                         
                         DispatchQueue.main.async {
                             
