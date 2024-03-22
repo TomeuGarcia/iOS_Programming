@@ -34,13 +34,13 @@
                                                         <constraint firstAttribute="height" constant="125" id="xvh-zc-HQM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmL-ia-Xg9" userLabel="Ttitle_Text">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="AmL-ia-Xg9" userLabel="Ttitle_Text">
                                                     <rect key="frame" x="140" y="33" width="213" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hero long description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FY9-pW-gMu" userLabel="Description_Text">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hero long description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY9-pW-gMu" userLabel="Description_Text">
                                                     <rect key="frame" x="140" y="74" width="213" height="58.333333333333343"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -74,13 +74,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="165.33332824707031"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD2-IG-Z1u" userLabel="Ttitle_Text">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uD2-IG-Z1u" userLabel="Ttitle_Text">
                                                     <rect key="frame" x="40" y="33" width="193" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hero long description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LBP-Dd-e34" userLabel="Description_Text">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hero long description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBP-Dd-e34" userLabel="Description_Text">
                                                     <rect key="frame" x="40" y="74" width="193" height="58.333333333333343"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
