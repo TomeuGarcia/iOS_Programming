@@ -49,105 +49,81 @@ struct DigimonSkills : Codable {
 
 class HeroesListVC : VC {
     
+    
+    @IBOutlet weak var table: UITableView!
+    
+    
+    
+    var heroes: [Hero] = []
+    var callInProgress: Bool = false
+    var totalOfHeroes: Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //callPokemon()
+
+        table.dataSource = self
         
-        //call(Pokemon.self, urlString : "https://pokeapi.co/api/v2/pokemon/charizard")
-        //call(Digimon.self, urlString : "https://digi-api.com/api/v1/digimon/289")
-        
-        RepoManager.Marvel.getHeroes(offset: 0, limit: 20) { heroes in
-            let i = 0
-        }
+        getMoreHeroes()
     }
     
-    
-    
-    func callPokemon() {
+    func getMoreHeroes() {
         
-        if let url = URL(string: "https://pokeapi.co/api/v2/pokemon/charizard")
-        {
-            let request = URLRequest(url: url)
+        if (callInProgress) {
+            return
+        }
+        
+        var currentLimit = 20
+        if let totalOfHeroes = totalOfHeroes {
+            let pendingHeroes = totalOfHeroes - heroes.count
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                
-                if let data = data, let jsonString = String(data: data, encoding: .utf8) {
-                    
-                    if let pokemon = try? JSONDecoder().decode(Pokemon.self, from: data) {
-                        
-                        DispatchQueue.main.async {
-                            
-                            print(pokemon)
-                            
-                        }
-                    }
-                }
-                
-                
+            if (pendingHeroes <= 0) {
+                return
             }
             
-            task.resume()
-        }
-        
-    }
-    
-    
-    func callDigimon() {
-        
-        if let url = URL(string: "https://digi-api.com/api/v1/digimon/289")
-        {
-            let request = URLRequest(url: url)
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                
-                if let data = data, let jsonString = String(data: data, encoding: .utf8) {
-                    
-                    if let digimon = try? JSONDecoder().decode(Digimon.self, from: data) {
-                        
-                        DispatchQueue.main.async {
-                            
-                            print(digimon)
-                            
-                        }
-                    }
-                }
-                
-                
+            if (pendingHeroes < currentLimit) {
+                currentLimit = pendingHeroes
             }
+        }
+        
+        self.callInProgress = true
+        
+        RepoManager.Marvel.getHeroes(offset: self.heroes.count, limit: currentLimit) 
+        { heroes, total in
+            self.heroes.insert(contentsOf: heroes, at: self.heroes.count)
+            self.table.reloadData()
             
-            task.resume()
+            self.callInProgress = false
         }
         
     }
+
     
+}
+
+
+extension HeroesListVC : UITableViewDataSource {
     
-    func call<T : Codable>(_ t: T.Type, urlString: String) {
-        
-        if let url = URL(string: urlString)
-        {
-            let request = URLRequest(url: url)
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                
-                if let data = data, let jsonString = String(data: data, encoding: .utf8) {
-                    
-                    if let digimon = try? JSONDecoder().decode(t, from: data) {
-                        
-                        DispatchQueue.main.async {
-                            
-                            print(digimon)
-                            
-                        }
-                    }
-                }
-                
-                
-            }
-            
-            task.resume()
-        }
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return heroes.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let identifier = indexPath.row % 2 == 0 ? "HeroCellLeft" : "HeroCellRight"
+        guard let heroCell =
+                tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? HeroCell
+        else {
+            return Cell()
+        }
+        
+        heroCell.setupWithHero(hero: heroes[indexPath.row])
+        
+        if (heroes.count - indexPath.row <= 5) {
+            getMoreHeroes()
+        }
+        
+        return heroCell
+    }
     
 }

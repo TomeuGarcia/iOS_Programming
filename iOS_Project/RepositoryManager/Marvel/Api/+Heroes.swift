@@ -22,11 +22,13 @@ extension MarvelApiRepository {
         
         if let url = marvelComponents.Components?.url
         {
-            /*
-            URLSession.getData(url: url)
-                { response: HeroesResponse Int}
-                { response: HeroesResponse Int}
-             */
+            
+            URLSession.getData(url: url) { response in
+                let result: HeroesResponse = response
+                onSuccess(result.data.results, result.data.total)
+                
+            } onFailure: { error in }
+             
         }
         
     }

@@ -26,6 +26,9 @@
 		6FB6F1582B8913C500587338 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB6F1572B8913C500587338 /* TextCell.swift */; };
 		6FB6F15A2B8924E700587338 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB6F1592B8924E700587338 /* NotesListViewController.swift */; };
 		6FB6F15C2B89280E00587338 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB6F15B2B89280E00587338 /* NoteCell.swift */; };
+		6FD4B9AC2BADD63A00F19EB9 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD4B9AB2BADD63A00F19EB9 /* HeroCell.swift */; };
+		6FD4B9AE2BADD66100F19EB9 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD4B9AD2BADD66100F19EB9 /* Cell.swift */; };
+		6FD4B9B02BADE94A00F19EB9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD4B9AF2BADE94A00F19EB9 /* ImageView.swift */; };
 		6FEE622A2BA4A32300B1B290 /* RepoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE62292BA4A32300B1B290 /* RepoManager.swift */; };
 		6FEE622D2BA4A4C200B1B290 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE622C2BA4A4C200B1B290 /* MarvelRepository.swift */; };
 		6FEE62302BA4A79400B1B290 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE622F2BA4A79400B1B290 /* Hero.swift */; };
@@ -56,6 +59,9 @@
 		6FB6F1572B8913C500587338 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		6FB6F1592B8924E700587338 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		6FB6F15B2B89280E00587338 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		6FD4B9AB2BADD63A00F19EB9 /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		6FD4B9AD2BADD66100F19EB9 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		6FD4B9AF2BADE94A00F19EB9 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		6FEE62292BA4A32300B1B290 /* RepoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoManager.swift; sourceTree = "<group>"; };
 		6FEE622C2BA4A4C200B1B290 /* MarvelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRepository.swift; sourceTree = "<group>"; };
 		6FEE622F2BA4A79400B1B290 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		6F9B27D22B9B6E3E0058A3FB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6FD4B9AB2BADD63A00F19EB9 /* HeroCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -140,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				6F9B27DA2B9B6FDA0058A3FB /* VC.swift */,
+				6FD4B9AD2BADD66100F19EB9 /* Cell.swift */,
+				6FD4B9AF2BADE94A00F19EB9 /* ImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -292,7 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD4B9B02BADE94A00F19EB9 /* ImageView.swift in Sources */,
 				6F9B44E42B7FDD3300F4BBE9 /* SteamLoginViewController.swift in Sources */,
+				6FD4B9AE2BADD66100F19EB9 /* Cell.swift in Sources */,
 				6F7F49232B92592F00F660E9 /* ButtonCell.swift in Sources */,
 				6F9B27D42B9B6E6B0058A3FB /* HeroesListVC.swift in Sources */,
 				6FAFEDFA2B76AF87009EF424 /* TestBindingViewController.swift in Sources */,
@@ -311,6 +322,7 @@
 				6FEE62352BA4B65B00B1B290 /* +Heroes.swift in Sources */,
 				6FEE622D2BA4A4C200B1B290 /* MarvelRepository.swift in Sources */,
 				6FAFEDE62B76A1F0009EF424 /* AppDelegate.swift in Sources */,
+				6FD4B9AC2BADD63A00F19EB9 /* HeroCell.swift in Sources */,
 				6FAFEDE82B76A1F0009EF424 /* SceneDelegate.swift in Sources */,
 				6F7F49212B92480400F660E9 /* NoteDetailVC.swift in Sources */,
 			);

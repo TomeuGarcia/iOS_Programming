@@ -10,7 +10,7 @@ import Foundation
 
 protocol MarvelRepository {
     
-    typealias HeroesResponse = ([Hero]) -> ()
+    typealias HeroesResponse = ([Hero], Int) -> ()
     
     
     func getHeroes(offset: Int, limit: Int, onSuccess: @escaping HeroesResponse)
