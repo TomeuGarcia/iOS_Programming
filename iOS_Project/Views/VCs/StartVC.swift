@@ -19,38 +19,56 @@ class StartVC : VC {
         let codeView = UIView()
         self.view.addSubview(codeView)
         
-        codeView.backgroundColor = .blue
+        codeView.backgroundColor = .red
+        
+        codeView.activateConstraints()
+            .alignVerticalTo(self.view)
+            .alignHorizontalTo(self.view)
+            .heightTo(constant: 100)
+            .widthTo(constant: 100)
         
         
-        /*
-        codeView.translatesAutoresizingMaskIntoConstraints = false
+        let v2 = UIView()
+        v2.backgroundColor = .purple
         
-        let centerX = codeView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        centerX.isActive = true
+        codeView.addSubview(v2)
         
-        codeView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 100)
-            .isActive = true
+        v2.activateConstraints()
+            .equalHeightTo(codeView, multiplier: 0.5)
+            .equalWidthTo(codeView, multiplier: 0.5)
+            .alignVerticalTo(codeView)
+            .alignHorizontalTo(codeView)
         
-        NSLayoutConstraint.activate([
-            codeView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5),
-            NSLayoutConstraint(
-                item: codeView,
-                attribute: .height,
-                relatedBy: .equal,
-                toItem: self.view,
-                attribute: .height,
-                multiplier: 1,
-                constant: -300
-            )
-        ])
-         */
         
-        /*
-        codeView.enableConstraints()
-            .centerX(to: self.view)
-            .centerY(to: self.view, constant: 100)
-            .equalWidth(to: self.view, multiplier: 0.5)
-            .equalHeight(to: self.view, multiplier: -300)
-        */
+        let v3 = UIView()
+        v3.backgroundColor = .yellow
+        
+        self.view.addSubview(v3)
+        
+        v3.activateConstraints()
+            .equalHeightTo(codeView, multiplier: 1.5)
+            .equalWidthTo(codeView, multiplier: 1.5)
+            .alignHorizontalTo(codeView)
+            .aboveTo(codeView, margin: 50)
+        
+        
+        let v4 = UIView()
+        v4.backgroundColor = .blue
+        
+        self.view.addSubview(v4)
+        
+        v4.activateConstraints()
+            .equalHeightTo(codeView, multiplier: 1.5)
+            .equalWidthTo(codeView, multiplier: 1.5)
+            .alignHorizontalTo(codeView)
+            .underTo(codeView, margin: .spaceHuge)
+        
+        
+        let label = Label("Hello".Translated, style: .title1)
+        v3.addSubview(label)
+        
+        label.pinTo(v3, padding: .spaceHalf)
+        
+
     }
 }

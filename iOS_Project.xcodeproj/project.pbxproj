@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4F347D2BC0438E001F8BBC /* CGFloat+Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F347C2BC0438E001F8BBC /* CGFloat+Dimensions.swift */; };
+		6F4F347F2BC045CE001F8BBC /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F347E2BC045CE001F8BBC /* Label.swift */; };
+		6F4F34812BC048C2001F8BBC /* UIFont+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F34802BC048C2001F8BBC /* UIFont+Resize.swift */; };
+		6F4F34832BC04BF1001F8BBC /* String+Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F34822BC04BF1001F8BBC /* String+Translations.swift */; };
+		6F4F34852BC04D8E001F8BBC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4F34842BC04D8E001F8BBC /* Button.swift */; };
 		6F7F491D2B922D1900F660E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7F491C2B922D1900F660E9 /* Note.swift */; };
 		6F7F491F2B92336B00F660E9 /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7F491E2B92336B00F660E9 /* UserDefaults+Codable.swift */; };
 		6F7F49212B92480400F660E9 /* NoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7F49202B92480400F660E9 /* NoteDetailVC.swift */; };
@@ -39,6 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F4F347C2BC0438E001F8BBC /* CGFloat+Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Dimensions.swift"; sourceTree = "<group>"; };
+		6F4F347E2BC045CE001F8BBC /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		6F4F34802BC048C2001F8BBC /* UIFont+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Resize.swift"; sourceTree = "<group>"; };
+		6F4F34822BC04BF1001F8BBC /* String+Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Translations.swift"; sourceTree = "<group>"; };
+		6F4F34842BC04D8E001F8BBC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		6F7F491C2B922D1900F660E9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		6F7F491E2B92336B00F660E9 /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
 		6F7F49202B92480400F660E9 /* NoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailVC.swift; sourceTree = "<group>"; };
@@ -117,6 +127,9 @@
 				6F7F491E2B92336B00F660E9 /* UserDefaults+Codable.swift */,
 				6FEE62362BA4D11D00B1B290 /* URLSession+JSON.swift */,
 				6FD4B9B52BAE04B900F19EB9 /* UIView+Constraints.swift */,
+				6F4F347C2BC0438E001F8BBC /* CGFloat+Dimensions.swift */,
+				6F4F34802BC048C2001F8BBC /* UIFont+Resize.swift */,
+				6F4F34822BC04BF1001F8BBC /* String+Translations.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -152,6 +165,8 @@
 				6F9B27DA2B9B6FDA0058A3FB /* VC.swift */,
 				6FD4B9AD2BADD66100F19EB9 /* Cell.swift */,
 				6FD4B9AF2BADE94A00F19EB9 /* ImageView.swift */,
+				6F4F347E2BC045CE001F8BBC /* Label.swift */,
+				6F4F34842BC04D8E001F8BBC /* Button.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -321,8 +336,10 @@
 			files = (
 				6FD4B9B02BADE94A00F19EB9 /* ImageView.swift in Sources */,
 				6F9B44E42B7FDD3300F4BBE9 /* SteamLoginViewController.swift in Sources */,
+				6F4F34812BC048C2001F8BBC /* UIFont+Resize.swift in Sources */,
 				6FD4B9AE2BADD66100F19EB9 /* Cell.swift in Sources */,
 				6FD4B9B62BAE04B900F19EB9 /* UIView+Constraints.swift in Sources */,
+				6F4F34852BC04D8E001F8BBC /* Button.swift in Sources */,
 				6F7F49232B92592F00F660E9 /* ButtonCell.swift in Sources */,
 				6F9B27D42B9B6E6B0058A3FB /* HeroesListVC.swift in Sources */,
 				6FAFEDFA2B76AF87009EF424 /* TestBindingViewController.swift in Sources */,
@@ -335,8 +352,10 @@
 				6F7F491D2B922D1900F660E9 /* Note.swift in Sources */,
 				6FEE62302BA4A79400B1B290 /* Hero.swift in Sources */,
 				6FEE62372BA4D11D00B1B290 /* URLSession+JSON.swift in Sources */,
+				6F4F347D2BC0438E001F8BBC /* CGFloat+Dimensions.swift in Sources */,
 				6FB6F1562B89108100587338 /* TableTesteViewController.swift in Sources */,
 				6FB6F15C2B89280E00587338 /* NoteCell.swift in Sources */,
+				6F4F34832BC04BF1001F8BBC /* String+Translations.swift in Sources */,
 				6FEE62322BA4AA9100B1B290 /* MarvelApiRepository.swift in Sources */,
 				6FEE62352BA4B65B00B1B290 /* +Heroes.swift in Sources */,
 				6FEE622D2BA4A4C200B1B290 /* MarvelRepository.swift in Sources */,
@@ -344,6 +363,7 @@
 				6FAFEDE62B76A1F0009EF424 /* AppDelegate.swift in Sources */,
 				6FD4B9AC2BADD63A00F19EB9 /* HeroCell.swift in Sources */,
 				6FAFEDE82B76A1F0009EF424 /* SceneDelegate.swift in Sources */,
+				6F4F347F2BC045CE001F8BBC /* Label.swift in Sources */,
 				6F7F49212B92480400F660E9 /* NoteDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

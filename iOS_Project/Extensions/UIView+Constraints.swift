@@ -1,8 +1,8 @@
 //
 //  UIView+Constraints.swift
-//  iOS_Project
+//  projectclase
 //
-//  Created by Tomeu Garcia Pinto on 22/3/24.
+//  Created by Abraham on 22/3/24.
 //
 
 import Foundation
@@ -16,18 +16,16 @@ extension UIView {
         case Greater
     }
     
-    @discardableResult
-    func activateConstraints() -> UIView {
+    @discardableResult func activateConstraints() -> UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         return self
     }
     
-
+    //MARK: Aligns
     
-    // MARK: Aligns
+    //MARK: Horiontal Aligns
     
-    @discardableResult
-    func alignLeftConstraint(
+    @discardableResult func alignLeftConstraint(
         other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
@@ -35,35 +33,38 @@ extension UIView {
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
+        let constraint: NSLayoutConstraint
         let otherLeadingAnchor = safeArea ?
             other.safeAreaLayoutGuide.leadingAnchor :
             other.leadingAnchor
         
-        return alignXAxisConstraint(
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherLeadingAnchor,
-            thisAnchor: self.leadingAnchor)
+        switch(type) {
+        case .Lesser:
+            constraint = self.leadingAnchor.constraint(lessThanOrEqualTo: otherLeadingAnchor, constant: padding)
+        case .Equal:
+            constraint = self.leadingAnchor.constraint(equalTo: otherLeadingAnchor, constant: padding)
+        case .Greater:
+            constraint = self.leadingAnchor.constraint(greaterThanOrEqualTo: otherLeadingAnchor, constant: padding)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
     }
     
-    @discardableResult
-    func alignLeftTo(
+    @discardableResult func alignLeftTo(
         _ other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignLeftConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        alignLeftConstraint(other: other, padding: padding, type: type, safeArea: safeArea)
+        
         return self
     }
     
-    
-    
-    @discardableResult
-    func alignRightConstraint(
+    @discardableResult func alignRightConstraint(
         other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
@@ -71,35 +72,40 @@ extension UIView {
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
+        let constraint: NSLayoutConstraint
         let otherTrailingAnchor = safeArea ?
             other.safeAreaLayoutGuide.trailingAnchor :
             other.trailingAnchor
-                
-        return alignXAxisConstraint(
-            padding: -padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherTrailingAnchor,
-            thisAnchor: self.trailingAnchor)
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.trailingAnchor.constraint(lessThanOrEqualTo: otherTrailingAnchor, constant: -padding)
+        case .Equal:
+            constraint = self.trailingAnchor.constraint(equalTo: otherTrailingAnchor, constant: -padding)
+        case .Greater:
+            constraint = self.trailingAnchor.constraint(greaterThanOrEqualTo: otherTrailingAnchor, constant: -padding)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
     }
     
-    @discardableResult
-    func alignRightTo(
+    @discardableResult func alignRightTo(
         _ other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignRightConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        alignRightConstraint(other: other, padding: padding, type: type, safeArea: safeArea)
+        
         return self
     }
-        
     
+    //MARK: Vertical Aligns
     
-    @discardableResult
-    func alignBottomConstraint(
+    @discardableResult func alignTopConstraint(
         other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
@@ -107,126 +113,38 @@ extension UIView {
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
-        let otherBottomAnchor = safeArea ?
-            other.safeAreaLayoutGuide.bottomAnchor :
-            other.bottomAnchor
-                
-        return alignYAxisConstraint(
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherBottomAnchor,
-            thisAnchor: self.bottomAnchor)
-    }
-    
-    @discardableResult
-    func alignBottomTo(
-        _ other: UIView,
-        padding: CGFloat = 0,
-        type: ConstraintType = .Equal,
-        safeArea: Bool = true
-    ) -> UIView {
-        
-        alignBottomConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
-        return self
-    }
-    
-    
-    
-    @discardableResult
-    func alignTopConstraint(
-        other: UIView,
-        padding: CGFloat = 0,
-        type: ConstraintType = .Equal,
-        safeArea: Bool = true,
-        activated: Bool = true
-    ) -> NSLayoutConstraint {
-        
+        let constraint: NSLayoutConstraint
         let otherTopAnchor = safeArea ?
             other.safeAreaLayoutGuide.topAnchor :
             other.topAnchor
         
-        return alignYAxisConstraint(
-            padding: -padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherTopAnchor,
-            thisAnchor: self.topAnchor)
+        switch(type) {
+        case .Lesser:
+            constraint = self.topAnchor.constraint(lessThanOrEqualTo: otherTopAnchor, constant: padding)
+        case .Equal:
+            constraint = self.topAnchor.constraint(equalTo: otherTopAnchor, constant: padding)
+        case .Greater:
+            constraint = self.topAnchor.constraint(greaterThanOrEqualTo: otherTopAnchor, constant: padding)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
     }
     
-    @discardableResult
-    func alignTopTo(
+    @discardableResult func alignTopTo(
         _ other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignTopConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        alignTopConstraint(other: other, padding: padding, type: type, safeArea: safeArea)
+        
         return self
     }
-        
     
-    
-    
-    
-    // MARK: Center Aligns
-    // TODO X
-    func alignXCenterConstraint(
-        other: UIView,
-        padding: CGFloat = 0,
-        type: ConstraintType = .Equal,
-        safeArea: Bool = true,
-        activated: Bool = true
-    ) {
-        
-        alignTopConstraint(
-            other: other,
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated)
-        
-        alignBottomConstraint(
-            other: other,
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated)
-    }
-    
-    // TODO Y
-    func alignYCenterConstraint(
-        other: UIView,
-        padding: CGFloat = 0,
-        type: ConstraintType = .Equal,
-        safeArea: Bool = true,
-        activated: Bool = true
-    ) {
-        
-        alignLeftConstraint(
-            other: other,
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated)
-        
-        alignRightConstraint(
-            other: other,
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated)
-    }
-    
-    
-    
-    // MARK: Relatives
-    // Below of [DONE]
-    @discardableResult
-    func alignBelowConstraint(
+    @discardableResult func alignBotConstraint(
         other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
@@ -234,215 +152,443 @@ extension UIView {
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
-        let otherBottomAnchor = safeArea ?
+        let constraint: NSLayoutConstraint
+        let otherBotAnchor = safeArea ?
             other.safeAreaLayoutGuide.bottomAnchor :
             other.bottomAnchor
         
-        return alignYAxisConstraint(
-            padding: -padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherBottomAnchor,
-            thisAnchor: self.topAnchor)
+        switch(type) {
+        case .Lesser:
+            constraint = self.bottomAnchor.constraint(lessThanOrEqualTo: otherBotAnchor, constant: -padding)
+        case .Equal:
+            constraint = self.bottomAnchor.constraint(equalTo: otherBotAnchor, constant: -padding)
+        case .Greater:
+            constraint = self.bottomAnchor.constraint(greaterThanOrEqualTo: otherBotAnchor, constant: -padding)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
     }
     
-    @discardableResult
-    func belowOf(
+    @discardableResult func alignBotTo(
         _ other: UIView,
         padding: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignBelowConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        alignBotConstraint(other: other, padding: padding, type: type, safeArea: safeArea)
+        
         return self
     }
     
+    //MARK: Center Aligns
     
-    // On top of [DONE]
-    @discardableResult
-    func alignOnTopConstraint(
+    @discardableResult func alingHorizontalConstraint(
         other: UIView,
-        padding: CGFloat = 0,
+        offset: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true,
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
-        let otherTopAnchor = safeArea ?
-            other.safeAreaLayoutGuide.topAnchor :
-            other.topAnchor
+        let constraint: NSLayoutConstraint
+        let otherCenterX = safeArea ?
+            other.safeAreaLayoutGuide.centerXAnchor :
+            other.centerXAnchor
         
-        return alignYAxisConstraint(
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherTopAnchor,
-            thisAnchor: self.bottomAnchor)
+        switch(type) {
+        case .Lesser:
+            constraint = self.centerXAnchor.constraint(lessThanOrEqualTo: otherCenterX, constant: offset)
+        case .Equal:
+            constraint = self.centerXAnchor.constraint(equalTo: otherCenterX, constant: offset)
+        case .Greater:
+            constraint = self.centerXAnchor.constraint(greaterThanOrEqualTo: otherCenterX, constant: offset)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+        
     }
     
-    @discardableResult
-    func onTopOf(
+    @discardableResult func alignHorizontalTo(
         _ other: UIView,
-        padding: CGFloat = 0,
+        offset: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignOnTopConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        alingHorizontalConstraint(other: other, offset: offset, type: type, safeArea: safeArea)
+        
         return self
     }
     
-    
-    
-    // TODO Left of [DONE]
-    @discardableResult
-    func alignLeftOfConstraint(
+    @discardableResult func alingVerticalConstraint(
         other: UIView,
-        padding: CGFloat = 0,
+        offset: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true,
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
+        let constraint: NSLayoutConstraint
+        let otherCenterY = safeArea ?
+            other.safeAreaLayoutGuide.centerYAnchor :
+            other.centerYAnchor
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.centerYAnchor.constraint(lessThanOrEqualTo: otherCenterY, constant: offset)
+        case .Equal:
+            constraint = self.centerYAnchor.constraint(equalTo: otherCenterY, constant: offset)
+        case .Greater:
+            constraint = self.centerYAnchor.constraint(greaterThanOrEqualTo: otherCenterY, constant: offset)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+        
+    }
+    
+    @discardableResult func alignVerticalTo(
+        _ other: UIView,
+        offset: CGFloat = 0,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true
+    ) -> UIView {
+        
+        alingVerticalConstraint(other: other, offset: offset, type: type, safeArea: safeArea)
+        
+        return self
+    }
+    
+    //MARK: Relatives
+    
+    //MARK: Horiontal Relatives
+    
+    @discardableResult func leftConstraint(
+        other: UIView,
+        margin: CGFloat = 0,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        
+        let constraint: NSLayoutConstraint
         let otherLeadingAnchor = safeArea ?
             other.safeAreaLayoutGuide.leadingAnchor :
             other.leadingAnchor
         
-        return alignXAxisConstraint(
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherLeadingAnchor,
-            thisAnchor: self.trailingAnchor)
+        switch(type) {
+        case .Lesser:
+            constraint = self.trailingAnchor.constraint(lessThanOrEqualTo: otherLeadingAnchor, constant: -margin)
+        case .Equal:
+            constraint = self.trailingAnchor.constraint(equalTo: otherLeadingAnchor, constant: -margin)
+        case .Greater:
+            constraint = self.trailingAnchor.constraint(greaterThanOrEqualTo: otherLeadingAnchor, constant: -margin)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
     }
     
-    @discardableResult
-    func onLeftOf(
+    @discardableResult func leftTo(
         _ other: UIView,
-        padding: CGFloat = 0,
+        margin: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignLeftOfConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        leftConstraint(other: other, margin: margin, type: type, safeArea: safeArea)
+        
         return self
     }
-
     
-    
-    // TODO Right to [DONE]
-    @discardableResult
-    func alignRightOfConstraint(
+    @discardableResult func rightConstraint(
         other: UIView,
-        padding: CGFloat = 0,
+        margin: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true,
         activated: Bool = true
     ) -> NSLayoutConstraint {
         
+        let constraint: NSLayoutConstraint
         let otherTrailingAnchor = safeArea ?
             other.safeAreaLayoutGuide.trailingAnchor :
             other.trailingAnchor
         
-        return alignXAxisConstraint(
-            padding: padding,
-            type: type,
-            safeArea: safeArea,
-            activated: activated,
-            otherAnchor: otherTrailingAnchor,
-            thisAnchor: self.leadingAnchor)
+        switch(type) {
+        case .Lesser:
+            constraint = self.leadingAnchor.constraint(lessThanOrEqualTo: otherTrailingAnchor, constant: margin)
+        case .Equal:
+            constraint = self.leadingAnchor.constraint(equalTo: otherTrailingAnchor, constant: margin)
+        case .Greater:
+            constraint = self.leadingAnchor.constraint(greaterThanOrEqualTo: otherTrailingAnchor, constant: margin)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
     }
     
-    @discardableResult
-    func onRightOf(
+    @discardableResult func rightTo(
         _ other: UIView,
-        padding: CGFloat = 0,
+        margin: CGFloat = 0,
         type: ConstraintType = .Equal,
         safeArea: Bool = true
     ) -> UIView {
         
-        alignRightOfConstraint(other: other, padding: padding, type: type, safeArea: safeArea, activated: true)
+        rightConstraint(other: other, margin: margin, type: type, safeArea: safeArea)
+        
         return self
     }
     
+    //MARK: Vertical Relatives
     
+    @discardableResult func aboveConstraint(
+        other: UIView,
+        margin: CGFloat = 0,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        
+        let constraint: NSLayoutConstraint
+        let otherTopAnchor = safeArea ?
+            other.safeAreaLayoutGuide.topAnchor :
+            other.topAnchor
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.bottomAnchor.constraint(lessThanOrEqualTo: otherTopAnchor, constant: -margin)
+        case .Equal:
+            constraint = self.bottomAnchor.constraint(equalTo: otherTopAnchor, constant: -margin)
+        case .Greater:
+            constraint = self.bottomAnchor.constraint(greaterThanOrEqualTo: otherTopAnchor, constant: -margin)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+    }
     
-    // MARK: Helpers
+    @discardableResult func aboveTo(
+        _ other: UIView,
+        margin: CGFloat = 0,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true
+    ) -> UIView {
+        
+        aboveConstraint(other: other, margin: margin, type: type, safeArea: safeArea)
+        
+        return self
+    }
     
-    @discardableResult
-    func pinTo(_ other: UIView,
-               padding: CGFloat = 0,
-               safeArea: Bool = true
+    @discardableResult func underConstraint(
+        other: UIView,
+        margin: CGFloat = 0,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        
+        let constraint: NSLayoutConstraint
+        let otherBotAnchor = safeArea ?
+            other.safeAreaLayoutGuide.bottomAnchor :
+            other.bottomAnchor
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.topAnchor.constraint(lessThanOrEqualTo: otherBotAnchor, constant: margin)
+        case .Equal:
+            constraint = self.topAnchor.constraint(equalTo: otherBotAnchor, constant: margin)
+        case .Greater:
+            constraint = self.topAnchor.constraint(greaterThanOrEqualTo: otherBotAnchor, constant: margin)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+    }
+    
+    @discardableResult func underTo(
+        _ other: UIView,
+        margin: CGFloat = 0,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true
+    ) -> UIView {
+        
+        underConstraint(other: other, margin: margin, type: type, safeArea: safeArea)
+        
+        return self
+    }
+    
+    //MARK: Size
+    
+    //MARK: Size Direct
+    
+    @discardableResult func widthConstraint(
+        constant: CGFloat,
+        type: ConstraintType = .Equal,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        let constraint:NSLayoutConstraint
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.widthAnchor.constraint(lessThanOrEqualToConstant: constant)
+        case .Equal:
+            constraint = self.widthAnchor.constraint(equalToConstant: constant)
+        case .Greater:
+            constraint = self.widthAnchor.constraint(greaterThanOrEqualToConstant: constant)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+    }
+    
+    @discardableResult func widthTo(
+        constant: CGFloat,
+        type: ConstraintType = .Equal
+    ) -> UIView {
+        
+        widthConstraint(constant: constant, type: type)
+        
+        return self
+    }
+    
+    @discardableResult func heightConstraint(
+        constant: CGFloat,
+        type: ConstraintType = .Equal,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        let constraint:NSLayoutConstraint
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.heightAnchor.constraint(lessThanOrEqualToConstant: constant)
+        case .Equal:
+            constraint = self.heightAnchor.constraint(equalToConstant: constant)
+        case .Greater:
+            constraint = self.heightAnchor.constraint(greaterThanOrEqualToConstant: constant)
+        }
+        
+        constraint.isActive = activated
+        return constraint
+    }
+    
+    @discardableResult func heightTo(
+        constant: CGFloat,
+        type: ConstraintType = .Equal
+    ) -> UIView {
+        heightConstraint(constant: constant, type: type)
+        return self
+    }
+    
+    //MARK: Size Relative
+    
+    @discardableResult func equalWidthConstraint(
+        other: UIView,
+        constant: CGFloat = 0,
+        multiplier: CGFloat = 1,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        let constraint:NSLayoutConstraint
+        
+        let otherWidthAnchor = safeArea ?
+        other.safeAreaLayoutGuide.widthAnchor :
+        other.widthAnchor
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.widthAnchor.constraint(lessThanOrEqualTo: otherWidthAnchor, multiplier: multiplier, constant: constant)
+        case .Equal:
+            constraint = self.widthAnchor.constraint(equalTo: otherWidthAnchor, multiplier: multiplier, constant: constant)
+        case .Greater:
+            constraint = self.widthAnchor.constraint(greaterThanOrEqualTo: otherWidthAnchor, multiplier: multiplier, constant: constant)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+    }
+    
+    @discardableResult func equalWidthTo(
+        _ other: UIView,
+        constant: CGFloat = 0,
+        multiplier: CGFloat = 1,
+        safeArea: Bool = true,
+        type: ConstraintType = .Equal
+    ) -> UIView {
+        
+        equalWidthConstraint(other: other, constant: constant, multiplier: multiplier , type: type, safeArea: safeArea)
+        
+        return self
+    }
+    
+    @discardableResult func equalHeightConstraint(
+        other: UIView,
+        constant: CGFloat = 0,
+        multiplier: CGFloat = 1,
+        type: ConstraintType = .Equal,
+        safeArea: Bool = true,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        let constraint:NSLayoutConstraint
+        
+        let otherHeightAnchor = safeArea ?
+        other.safeAreaLayoutGuide.heightAnchor :
+        other.heightAnchor
+        
+        switch(type) {
+        case .Lesser:
+            constraint = self.heightAnchor.constraint(lessThanOrEqualTo: otherHeightAnchor, multiplier: multiplier, constant: constant)
+        case .Equal:
+            constraint = self.heightAnchor.constraint(equalTo: otherHeightAnchor, multiplier: multiplier, constant: constant)
+        case .Greater:
+            constraint = self.heightAnchor.constraint(greaterThanOrEqualTo: otherHeightAnchor, multiplier: multiplier, constant: constant)
+        }
+        
+        constraint.isActive = activated
+        
+        return constraint
+    }
+    
+    @discardableResult func equalHeightTo(
+        _ other: UIView,
+        constant: CGFloat = 0,
+        multiplier: CGFloat = 1,
+        safeArea: Bool = true,
+        type: ConstraintType = .Equal
+    ) -> UIView {
+        
+        equalHeightConstraint(other: other, constant: constant, multiplier: multiplier , type: type, safeArea: safeArea)
+        
+        return self
+    }
+    
+    //MARK: Helpers
+    
+    @discardableResult func pinTo(
+        _ other: UIView,
+        padding: CGFloat = 0,
+        safeArea: Bool = true
     ) -> UIView {
         
         self.activateConstraints()
-            .alignLeftTo   (other, padding: padding, safeArea: safeArea)
-            .alignRightTo  (other, padding: padding, safeArea: safeArea)
-            .alignBottomTo (other, padding: padding, safeArea: safeArea)
-            .alignTopTo    (other, padding: padding, safeArea: safeArea)
+            .alignTopTo(other, padding: padding, safeArea: safeArea)
+            .alignLeftTo(other, padding: padding, safeArea: safeArea)
+            .alignRightTo(other, padding: padding, safeArea: safeArea)
+            .alignBotTo(other, padding: padding, safeArea: safeArea)
+        
         return self
     }
-     
-    
-    
-    private func alignXAxisConstraint(
-        padding: CGFloat,
-        type: ConstraintType,
-        safeArea: Bool,
-        activated: Bool,
-        otherAnchor: NSLayoutXAxisAnchor,
-        thisAnchor: NSLayoutXAxisAnchor
-    ) -> NSLayoutConstraint {
-        
-        let constraint: NSLayoutConstraint
-                
-        switch(type) {
-        case .Lesser:
-            constraint = thisAnchor.constraint(lessThanOrEqualTo: otherAnchor, constant: padding)
-        case .Equal:
-            constraint = thisAnchor.constraint(equalTo: otherAnchor, constant: padding)
-        case .Greater:
-            constraint = thisAnchor.constraint(greaterThanOrEqualTo: otherAnchor, constant: padding)
-        }
-        
-        constraint.isActive = activated
-        
-        return constraint
-    }
-    
-    
-    private func alignYAxisConstraint(
-        padding: CGFloat,
-        type: ConstraintType,
-        safeArea: Bool,
-        activated: Bool,
-        otherAnchor: NSLayoutYAxisAnchor,
-        thisAnchor: NSLayoutYAxisAnchor
-    ) -> NSLayoutConstraint {
-        
-        let constraint: NSLayoutConstraint
-                
-        switch(type) {
-        case .Lesser:
-            constraint = thisAnchor.constraint(lessThanOrEqualTo: otherAnchor, constant: padding)
-        case .Equal:
-            constraint = thisAnchor.constraint(equalTo: otherAnchor, constant: padding)
-        case .Greater:
-            constraint = thisAnchor.constraint(greaterThanOrEqualTo: otherAnchor, constant: padding)
-        }
-        
-        constraint.isActive = activated
-        
-        return constraint
-    }
-    
-    
-
-    
-    
     
 }
