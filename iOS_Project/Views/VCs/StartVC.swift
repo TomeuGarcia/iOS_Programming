@@ -73,6 +73,7 @@ class StartVC : VC {
         
         let appleImageView = UIImageView()
         appleImageView.image = UIImage(named: "TestSVG")
+        appleImageView.image = .testSVG
         //appleImageView.image = #imageLiteral(resourceName: "TestSVG")
         
         v4.addSubview(appleImageView)
