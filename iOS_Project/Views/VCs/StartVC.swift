@@ -53,7 +53,8 @@ class StartVC : VC {
         
         
         let v4 = UIView()
-        v4.backgroundColor = .blue
+        v4.backgroundColor = UIColor(named: "Primary")
+        v4.backgroundColor = .primary
         
         self.view.addSubview(v4)
         
@@ -64,11 +65,19 @@ class StartVC : VC {
             .underTo(codeView, margin: .spaceHuge)
         
         
-        let label = Label("Hello".Translated, style: .title1)
+        let label = Label("Welcome_Key".Translated, style: .body)
         v3.addSubview(label)
         
         label.pinTo(v3, padding: .spaceHalf)
         
+        
+        let appleImageView = UIImageView()
+        appleImageView.image = UIImage(named: "TestSVG")
+        //appleImageView.image = #imageLiteral(resourceName: "TestSVG")
+        
+        v4.addSubview(appleImageView)
+        appleImageView.activateConstraints()
+            .pinTo(v4)
 
     }
 }
