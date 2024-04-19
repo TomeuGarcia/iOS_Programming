@@ -22,6 +22,7 @@
 		6F9B27DE2B9B71060058A3FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9B27DD2B9B71060058A3FB /* Colors.xcassets */; };
 		6F9B44E42B7FDD3300F4BBE9 /* SteamLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */; };
 		6FAB57152BD2B643001585BD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB57142BD2B643001585BD /* Observable.swift */; };
+		6FAB57172BD2D4BB001585BD /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB57162BD2D4BB001585BD /* ObservableArray.swift */; };
 		6FAFEDE62B76A1F0009EF424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE52B76A1F0009EF424 /* AppDelegate.swift */; };
 		6FAFEDE82B76A1F0009EF424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE72B76A1F0009EF424 /* SceneDelegate.swift */; };
 		6FAFEDEA2B76A1F0009EF424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE92B76A1F0009EF424 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		6F9B27DD2B9B71060058A3FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamLoginViewController.swift; sourceTree = "<group>"; };
 		6FAB57142BD2B643001585BD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		6FAB57162BD2D4BB001585BD /* ObservableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		6FAFEDE22B76A1F0009EF424 /* iOS_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFEDE52B76A1F0009EF424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FAFEDE72B76A1F0009EF424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				6FAB57142BD2B643001585BD /* Observable.swift */,
+				6FAB57162BD2D4BB001585BD /* ObservableArray.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				6F9B27DB2B9B6FDA0058A3FB /* VC.swift in Sources */,
 				6F7F491D2B922D1900F660E9 /* Note.swift in Sources */,
 				6FAB57152BD2B643001585BD /* Observable.swift in Sources */,
+				6FAB57172BD2D4BB001585BD /* ObservableArray.swift in Sources */,
 				6FEE62302BA4A79400B1B290 /* Hero.swift in Sources */,
 				6FEE62372BA4D11D00B1B290 /* URLSession+JSON.swift in Sources */,
 				6F4F347D2BC0438E001F8BBC /* CGFloat+Dimensions.swift in Sources */,

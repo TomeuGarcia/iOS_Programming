@@ -8,6 +8,21 @@
 import Foundation
 import UIKit
 
+struct NoPointerStruct : Equatable {
+    private let id = UUID()
+    
+    static func == (lhs: NoPointerStruct, rhs: NoPointerStruct) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
+class PointerClass : Equatable {
+    static func == (lhs: PointerClass, rhs: PointerClass) -> Bool {
+        return lhs === rhs
+    }
+}
+
+
 class StartVC : VC {
     
     let count = Observable<Int>(0)
@@ -55,6 +70,22 @@ class StartVC : VC {
             self.count.removeObservation(id: obsIdCount)
             self.health.removeObservation(id: obsIdHealth)
         }
+        
+        
+        let obsList = ObservableArray<Int>([1,2,3])
+        obsList.addObservation { lastValue, newValue, affectedValue in
+            debugPrint(newValue)
+        }
+        
+        debugPrint(obsList[0])
+        obsList[0] = 10
+        
+        
+        let obsPointerList = ObservableArray<PointerClass>([])
+        //obsPointerList.firstIndexOf()
+
+        let obsNoPointerList = ObservableArray<NoPointerStruct>([])
+        //obsNoPointerList.firstIndexOf()
     }
     
     
