@@ -21,6 +21,7 @@
 		6F9B27DB2B9B6FDA0058A3FB /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B27DA2B9B6FDA0058A3FB /* VC.swift */; };
 		6F9B27DE2B9B71060058A3FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9B27DD2B9B71060058A3FB /* Colors.xcassets */; };
 		6F9B44E42B7FDD3300F4BBE9 /* SteamLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */; };
+		6FAB57152BD2B643001585BD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB57142BD2B643001585BD /* Observable.swift */; };
 		6FAFEDE62B76A1F0009EF424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE52B76A1F0009EF424 /* AppDelegate.swift */; };
 		6FAFEDE82B76A1F0009EF424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE72B76A1F0009EF424 /* SceneDelegate.swift */; };
 		6FAFEDEA2B76A1F0009EF424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEDE92B76A1F0009EF424 /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		6F9B27DA2B9B6FDA0058A3FB /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
 		6F9B27DD2B9B71060058A3FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		6F9B44E32B7FDD3300F4BBE9 /* SteamLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamLoginViewController.swift; sourceTree = "<group>"; };
+		6FAB57142BD2B643001585BD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		6FAFEDE22B76A1F0009EF424 /* iOS_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFEDE52B76A1F0009EF424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FAFEDE72B76A1F0009EF424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		6F9B27D52B9B6EA70058A3FB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6FAB57132BD2B600001585BD /* Observables */,
 				6F9B27DA2B9B6FDA0058A3FB /* VC.swift */,
 				6FD4B9AD2BADD66100F19EB9 /* Cell.swift */,
 				6FD4B9AF2BADE94A00F19EB9 /* ImageView.swift */,
@@ -182,6 +185,14 @@
 				6F5CC7F92BC9793D00063060 /* Localizable.xcstrings */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		6FAB57132BD2B600001585BD /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				6FAB57142BD2B643001585BD /* Observable.swift */,
+			);
+			path = Observables;
 			sourceTree = "<group>";
 		};
 		6FAFEDD92B76A1F0009EF424 = {
@@ -356,6 +367,7 @@
 				6FEE622A2BA4A32300B1B290 /* RepoManager.swift in Sources */,
 				6F9B27DB2B9B6FDA0058A3FB /* VC.swift in Sources */,
 				6F7F491D2B922D1900F660E9 /* Note.swift in Sources */,
+				6FAB57152BD2B643001585BD /* Observable.swift in Sources */,
 				6FEE62302BA4A79400B1B290 /* Hero.swift in Sources */,
 				6FEE62372BA4D11D00B1B290 /* URLSession+JSON.swift in Sources */,
 				6F4F347D2BC0438E001F8BBC /* CGFloat+Dimensions.swift in Sources */,

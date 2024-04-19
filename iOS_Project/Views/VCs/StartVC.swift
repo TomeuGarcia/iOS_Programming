@@ -10,12 +10,55 @@ import UIKit
 
 class StartVC : VC {
     
+    let count = Observable<Int>(0)
+    let health = Observable<Int>(27) { lastValue, newValue in
+        return (newValue >= 0) ? newValue : 0
+    }
+    
+    let heroes = Observable<[Hero]>([])
+    
+    
+    lazy var countButton: Button = {
+        let button = Button(Label("0"))
+        
+        self.view.addSubview(button)
+        button.alignVerticalTo(self.view)
+            .alignHorizontalTo(self.view)
+        
+        button.backgroundColor = .black
+        
+        return button
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .gray
+
         
+        let obsIdCount = self.count.addObservation { lastValue, newValue in
+            self.countButton.label?.text =
+            "Count: \(newValue) Health:  \(self.health.Value)"
+        }
+
+        let obsIdHealth = self.health.addObservation { lastValue, newValue in
+            self.countButton.label?.text =
+            "Count: \(self.count.Value) Health:  \(newValue)"
+        }
+        
+        
+        self.countButton.onClick = {
+            self.count.Value += 1
+            self.health.Value -= 5
+            
+            self.count.removeObservation(id: obsIdCount)
+            self.health.removeObservation(id: obsIdHealth)
+        }
+    }
+    
+    
+    private func testCodeUI() {
         let codeView = UIView()
         self.view.addSubview(codeView)
         
@@ -79,6 +122,6 @@ class StartVC : VC {
         v4.addSubview(appleImageView)
         appleImageView.activateConstraints()
             .pinTo(v4)
-
     }
+    
 }
