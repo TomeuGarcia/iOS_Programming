@@ -53,15 +53,35 @@ class StartVC : NavVC {
             
         }
         
+
+        
+        
+        let animView = UIView()
+        animView.backgroundColor = .red
+        self.view.addSubview(animView)
+        animView.activateConstraints()
+            .underTo(self.toRootButton)
+            .alignHorizontalTo(self.view)
+            .aspectRatio()
+        
+        let widthConstraint = animView.widthConstraint(constant: 100)
+        let widthConstraint2 = animView.widthConstraint(constant: 300, activated: false)
+        
         self.toRootButton.onClick = {
-            self.popToRootViewController(animated: true)
+            //widthConstraint.constant = 300
+            widthConstraint.isActive = false
+            widthConstraint2.isActive = true
+            
+            self.toRootButton.label?.text = "Renamed"
+            
+            
+            UIView.animate(withDuration: 3, delay: 0, options: .curveEaseInOut) {
+                self.view.layoutIfNeeded()
+                animView.backgroundColor = .blue
+                animView.transform = animView.transform.rotated(by: .pi)
+            }
+
         }
-        
-        self.navigationBar.backgroundColor = .magenta
-        
-        self.toolbar.backgroundColor = .green
-        self.setToolbarHidden(false, animated: false)
-        
 
     }
     
