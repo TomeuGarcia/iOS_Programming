@@ -9,15 +9,28 @@ import Foundation
 import UIKit
 
 
-class StartVC : VC {
+class StartVC : NavVC {
       
     
-    lazy var countButton: Button = {
+    lazy var utilButton: Button = {
         let button = Button(Label("Click me !!!"))
         
         self.view.addSubview(button)
         button.alignVerticalTo(self.view)
             .alignHorizontalTo(self.view)
+        
+        button.backgroundColor = .black
+        
+        return button
+    }()
+
+    lazy var toRootButton: Button = {
+        let button = Button(Label("To Root"))
+        
+        self.view.addSubview(button)
+        button
+            .alignHorizontalTo(self.view)
+            .underTo(self.utilButton)
         
         button.backgroundColor = .black
         
@@ -30,13 +43,33 @@ class StartVC : VC {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
 
+        let screen = ScreenOne()
+        self.pushViewController(screen, animated: true)
+        
+        self.utilButton.onClick = {
+            
+            let screen = ScreenTwo()
+            self.pushViewController(screen, animated: true)
+            
+        }
+        
+        self.toRootButton.onClick = {
+            self.popToRootViewController(animated: true)
+        }
+        
+        self.navigationBar.backgroundColor = .magenta
+        
+        self.toolbar.backgroundColor = .green
+        self.setToolbarHidden(false, animated: false)
+        
 
-        testAlerts()
     }
+    
+    
     
     func testAlerts() {
         
-        self.countButton.onClick = {
+        self.utilButton.onClick = {
             let alert = UIAlertController(
                 title: "My first Pop Up",
                 message: "Long Long Long Message\n Second Line",
@@ -52,7 +85,7 @@ class StartVC : VC {
             let okButton = UIAlertAction(
                 title: "Ok",
                 style: .default) { action in
-                    self.countButton.label?.text = tempTextField?.text
+                    self.utilButton.label?.text = tempTextField?.text
                 }
             
             let cancelButton = UIAlertAction(
@@ -62,8 +95,8 @@ class StartVC : VC {
             let destroyButton = UIAlertAction(
                 title: "Destroy",
                 style: .destructive) { action in
-                self.countButton.label?.text = "Destroyed"
-                self.countButton.label?.textColor = .red
+                self.utilButton.label?.text = "Destroyed"
+                self.utilButton.label?.textColor = .red
             }
             
 

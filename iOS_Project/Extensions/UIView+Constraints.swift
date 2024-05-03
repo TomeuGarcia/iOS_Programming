@@ -591,4 +591,23 @@ extension UIView {
         return self
     }
     
+    
+    @discardableResult func aspectRatioConstraint(
+        _ multiplier: CGFloat = 1,
+        activated: Bool = true
+    ) -> NSLayoutConstraint {
+        
+        let constraint = self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: multiplier)
+        constraint.isActive = activated
+        return constraint
+    }
+    
+    @discardableResult func aspectRatio(
+        _ multiplier: CGFloat = 1
+    ) -> UIView {
+
+        self.aspectRatioConstraint(multiplier, activated: true)
+        return self
+    }
+    
 }
