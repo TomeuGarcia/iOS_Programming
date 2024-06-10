@@ -15,6 +15,7 @@ class StartVC : NavVC {
     lazy var utilButton: Button = {
         let button = Button(Label("Click me !!!"))
         
+        
         self.view.addSubview(button)
         button.alignVerticalTo(self.view)
             .alignHorizontalTo(self.view)
